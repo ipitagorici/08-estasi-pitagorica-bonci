@@ -8,14 +8,15 @@ class ZeusAConfronto(Scene):
             return (x_coord, y_coord, 0)
 
 
-        from_edge_distance = 1.5
+        from_edge_distance = 1
         teatro = ImageMobject("../assets/Teatro_Comunale_Alessandro_Bonci.jpg")\
+            .scale(1.5)\
             .to_edge(LEFT)\
             .shift(RIGHT*from_edge_distance)
         zeus = ImageMobject("../assets/zeus_bianco-nobg.png")\
-            .scale(1.5)\
             .to_edge(RIGHT)\
             .shift(LEFT*from_edge_distance)
+        zeus.shift(DOWN*(zeus.get_bottom()[1]-teatro.get_bottom()[1]))
 
         zeus_height_indicator = Line(
             start=(zeus.get_bottom()[0], zeus.get_bottom()[1]-.5, 0), 
