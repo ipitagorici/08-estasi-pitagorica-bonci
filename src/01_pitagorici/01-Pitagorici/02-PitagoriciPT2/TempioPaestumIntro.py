@@ -2,7 +2,7 @@ from manim import *
 
 class TempioPaestumIntro(Scene):
     def construct(self):
-        paestum_img = ImageMobject("../assets/tempio-nettuno.jpg")
+        paestum_img = ImageMobject("../assets/imgs/tempio-nettuno.jpg")
         title = Tex(r"\textsc{Tempio di Nettuno — Paestum}")
         self.play(FadeIn(paestum_img))
         self.wait()

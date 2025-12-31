@@ -3,7 +3,7 @@ from manim import *
 class T2(Scene):
     def construct(self):
         def get_path(filename):
-            loghi_path = "../assets/loghi/"
+            loghi_path = "../assets/imgs/loghi/"
             return loghi_path + filename
         
         patrocinio = Group()

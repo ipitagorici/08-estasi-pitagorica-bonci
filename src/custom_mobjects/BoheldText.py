@@ -5,7 +5,7 @@ from typing import Self
 class BoheldText(Text):
     def __init__(self, text: str, fill_opacity=1.0, stroke_width=0, *, color=ManimColor('#FFFFFF'), font_size=48, line_spacing=-1, slant='NORMAL', weight='NORMAL', t2c=None, t2f=None, t2g=None, t2s=None, t2w=None, gradient=None, tab_width=4, warn_missing_font=True, height=None, width=None, should_center=True, disable_ligatures=False, use_svg_cache=False, **kwargs):
         # Be sure to have the font installed on your PC!
-        with register_font("../assets/fonts/Boheld Free DEMO.otf"):
+        with register_font("../assets/imgs/fonts/Boheld Free DEMO.otf"):
             super().__init__(text, fill_opacity, stroke_width, color, font_size, line_spacing, 'Boheld Free DEMO', slant, weight, t2c, t2f, t2g, t2s, t2w, gradient, tab_width, warn_missing_font, height, width, should_center, disable_ligatures, use_svg_cache, **kwargs)
 
     def get_shadow(self: Self, clr: ManimColor) -> Self:

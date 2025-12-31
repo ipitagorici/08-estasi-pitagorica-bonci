@@ -20,7 +20,7 @@ def generate_random_point_inside_screen():
 
 class Parola1(Scene):
     def construct(self):
-        bg = ImageMobject("src/assets/sfondoSpazio.jpg")
+        bg = ImageMobject("src/assets/imgs/sfondoSpazio.jpg")
         bg.set_resampling_algorithm(RESAMPLING_ALGORITHMS["nearest"])
         bg.scale_to_fit_height(config.frame_height)
         bg.move_to(ORIGIN)
@@ -34,7 +34,7 @@ class Parola1(Scene):
         
 class Parola2(Scene):
     def construct(self):
-        bg = ImageMobject("src/assets/sfondoSpazio.jpg")
+        bg = ImageMobject("src/assets/imgs/sfondoSpazio.jpg")
         bg.set_resampling_algorithm(RESAMPLING_ALGORITHMS["nearest"])
         bg.scale_to_fit_height(config.frame_height)
         bg.move_to(ORIGIN)
@@ -48,7 +48,7 @@ class Parola2(Scene):
 
 class Parola3(Scene):
     def construct(self):
-        bg = ImageMobject("src/assets/sfondoSpazio.jpg")
+        bg = ImageMobject("src/assets/imgs/sfondoSpazio.jpg")
         bg.set_resampling_algorithm(RESAMPLING_ALGORITHMS["nearest"])
         bg.scale_to_fit_height(config.frame_height)
         bg.move_to(ORIGIN)
@@ -62,7 +62,7 @@ class Parola3(Scene):
 
 class Parola4(Scene):
     def construct(self):
-        bg = ImageMobject("src/assets/sfondoSpazio.jpg")
+        bg = ImageMobject("src/assets/imgs/sfondoSpazio.jpg")
         bg.set_resampling_algorithm(RESAMPLING_ALGORITHMS["nearest"])
         bg.scale_to_fit_height(config.frame_height)
         bg.move_to(ORIGIN)
@@ -75,7 +75,7 @@ class Parola4(Scene):
 
 class Parola5(Scene):
     def construct(self):
-        bg = ImageMobject("src/assets/sfondoSpazio.jpg")
+        bg = ImageMobject("src/assets/imgs/sfondoSpazio.jpg")
         bg.set_resampling_algorithm(RESAMPLING_ALGORITHMS["nearest"])
         bg.scale_to_fit_height(config.frame_height)
         bg.move_to(ORIGIN)
@@ -90,7 +90,7 @@ class Parola5(Scene):
 
 class Parola6(Scene):
     def construct(self):
-        bg = ImageMobject("src/assets/sfondoSpazio.jpg")
+        bg = ImageMobject("src/assets/imgs/sfondoSpazio.jpg")
         bg.set_resampling_algorithm(RESAMPLING_ALGORITHMS["nearest"])
         bg.scale_to_fit_height(config.frame_height)
         bg.move_to(ORIGIN)
@@ -104,7 +104,7 @@ class Parola6(Scene):
 
 class Parola7(Scene):
     def construct(self):
-        bg = ImageMobject("src/assets/sfondoSpazio.jpg")
+        bg = ImageMobject("src/assets/imgs/sfondoSpazio.jpg")
         bg.set_resampling_algorithm(RESAMPLING_ALGORITHMS["nearest"])
         bg.scale_to_fit_height(config.frame_height)
         bg.move_to(ORIGIN)
@@ -118,7 +118,7 @@ class Parola7(Scene):
 
 class Parola8(Scene):
     def construct(self):
-        bg = ImageMobject("src/assets/sfondoSpazio.jpg")
+        bg = ImageMobject("src/assets/imgs/sfondoSpazio.jpg")
         bg.set_resampling_algorithm(RESAMPLING_ALGORITHMS["nearest"])
         bg.scale_to_fit_height(config.frame_height)
         bg.move_to(ORIGIN)
@@ -132,7 +132,7 @@ class Parola8(Scene):
 
 class Parola9(Scene):
     def construct(self):
-        bg = ImageMobject("src/assets/sfondoSpazio.jpg")
+        bg = ImageMobject("src/assets/imgs/sfondoSpazio.jpg")
         bg.set_resampling_algorithm(RESAMPLING_ALGORITHMS["nearest"])
         bg.scale_to_fit_height(config.frame_height)
         bg.move_to(ORIGIN)
@@ -146,7 +146,7 @@ class Parola9(Scene):
 
 class Parola10(Scene):
     def construct(self):
-        bg = ImageMobject("src/assets/sfondoSpazio.jpg")
+        bg = ImageMobject("src/assets/imgs/sfondoSpazio.jpg")
         bg.set_resampling_algorithm(RESAMPLING_ALGORITHMS["nearest"])
         bg.scale_to_fit_height(config.frame_height)
         bg.move_to(ORIGIN)
@@ -160,7 +160,7 @@ class Parola10(Scene):
 
 class Parola11(Scene):
     def construct(self):
-        bg = ImageMobject("src/assets/sfondoSpazio.jpg")
+        bg = ImageMobject("src/assets/imgs/sfondoSpazio.jpg")
         bg.set_resampling_algorithm(RESAMPLING_ALGORITHMS["nearest"])
         bg.scale_to_fit_height(config.frame_height)
         bg.move_to(ORIGIN)
@@ -174,7 +174,7 @@ class Parola11(Scene):
 
 class Parola12(Scene):
     def construct(self):
-        bg = ImageMobject("src/assets/sfondoSpazio.jpg")
+        bg = ImageMobject("src/assets/imgs/sfondoSpazio.jpg")
         bg.set_resampling_algorithm(RESAMPLING_ALGORITHMS["nearest"])
         bg.scale_to_fit_height(config.frame_height)
         bg.move_to(ORIGIN)
@@ -188,7 +188,7 @@ class Parola12(Scene):
 
 class Parola13(Scene):
     def construct(self):
-        bg = ImageMobject("src/assets/sfondoSpazio.jpg")
+        bg = ImageMobject("src/assets/imgs/sfondoSpazio.jpg")
         bg.set_resampling_algorithm(RESAMPLING_ALGORITHMS["nearest"])
         bg.scale_to_fit_height(config.frame_height)
         bg.move_to(ORIGIN)
@@ -202,7 +202,7 @@ class Parola13(Scene):
 
 class Parola14(Scene):
     def construct(self):
-        bg = ImageMobject("src/assets/sfondoSpazio.jpg")
+        bg = ImageMobject("src/assets/imgs/sfondoSpazio.jpg")
         bg.set_resampling_algorithm(RESAMPLING_ALGORITHMS["nearest"])
         bg.scale_to_fit_height(config.frame_height)
         bg.move_to(ORIGIN)
@@ -216,7 +216,7 @@ class Parola14(Scene):
 
 class Parola15(Scene):
     def construct(self):
-        bg = ImageMobject("src/assets/sfondoSpazio.jpg")
+        bg = ImageMobject("src/assets/imgs/sfondoSpazio.jpg")
         bg.set_resampling_algorithm(RESAMPLING_ALGORITHMS["nearest"])
         bg.scale_to_fit_height(config.frame_height)
         bg.move_to(ORIGIN)
@@ -230,7 +230,7 @@ class Parola15(Scene):
 
 class Parola16(Scene):
     def construct(self):
-        bg = ImageMobject("src/assets/sfondoSpazio.jpg")
+        bg = ImageMobject("src/assets/imgs/sfondoSpazio.jpg")
         bg.set_resampling_algorithm(RESAMPLING_ALGORITHMS["nearest"])
         bg.scale_to_fit_height(config.frame_height)
         bg.move_to(ORIGIN)
@@ -244,7 +244,7 @@ class Parola16(Scene):
 
 class Parola17(Scene):
     def construct(self):
-        bg = ImageMobject("src/assets/sfondoSpazio.jpg")
+        bg = ImageMobject("src/assets/imgs/sfondoSpazio.jpg")
         bg.set_resampling_algorithm(RESAMPLING_ALGORITHMS["nearest"])
         bg.scale_to_fit_height(config.frame_height)
         bg.move_to(ORIGIN)
@@ -258,7 +258,7 @@ class Parola17(Scene):
 
 class Parola18(Scene):
     def construct(self):
-        bg = ImageMobject("src/assets/sfondoSpazio.jpg")
+        bg = ImageMobject("src/assets/imgs/sfondoSpazio.jpg")
         bg.set_resampling_algorithm(RESAMPLING_ALGORITHMS["nearest"])
         bg.scale_to_fit_height(config.frame_height)
         bg.move_to(ORIGIN)
@@ -272,7 +272,7 @@ class Parola18(Scene):
 
 class Parola19(Scene):
     def construct(self):
-        bg = ImageMobject("src/assets/sfondoSpazio.jpg")
+        bg = ImageMobject("src/assets/imgs/sfondoSpazio.jpg")
         bg.set_resampling_algorithm(RESAMPLING_ALGORITHMS["nearest"])
         bg.scale_to_fit_height(config.frame_height)
         bg.move_to(ORIGIN)
@@ -286,7 +286,7 @@ class Parola19(Scene):
 
 class Parola20(Scene):
     def construct(self):
-        bg = ImageMobject("src/assets/sfondoSpazio.jpg")
+        bg = ImageMobject("src/assets/imgs/sfondoSpazio.jpg")
         bg.set_resampling_algorithm(RESAMPLING_ALGORITHMS["nearest"])
         bg.scale_to_fit_height(config.frame_height)
         bg.move_to(ORIGIN)
@@ -300,7 +300,7 @@ class Parola20(Scene):
 
 class Parola21(Scene):
     def construct(self):
-        bg = ImageMobject("src/assets/sfondoSpazio.jpg")
+        bg = ImageMobject("src/assets/imgs/sfondoSpazio.jpg")
         bg.set_resampling_algorithm(RESAMPLING_ALGORITHMS["nearest"])
         bg.scale_to_fit_height(config.frame_height)
         bg.move_to(ORIGIN)
@@ -314,7 +314,7 @@ class Parola21(Scene):
 
 class Parola22(Scene):
     def construct(self):
-        bg = ImageMobject("src/assets/sfondoSpazio.jpg")
+        bg = ImageMobject("src/assets/imgs/sfondoSpazio.jpg")
         bg.set_resampling_algorithm(RESAMPLING_ALGORITHMS["nearest"])
         bg.scale_to_fit_height(config.frame_height)
         bg.move_to(ORIGIN)
@@ -328,7 +328,7 @@ class Parola22(Scene):
 
 class Parola23(Scene):
     def construct(self):
-        bg = ImageMobject("src/assets/sfondoSpazio.jpg")
+        bg = ImageMobject("src/assets/imgs/sfondoSpazio.jpg")
         bg.set_resampling_algorithm(RESAMPLING_ALGORITHMS["nearest"])
         bg.scale_to_fit_height(config.frame_height)
         bg.move_to(ORIGIN)
@@ -342,7 +342,7 @@ class Parola23(Scene):
 
 class Parola24(Scene):
     def construct(self):
-        bg = ImageMobject("src/assets/sfondoSpazio.jpg")
+        bg = ImageMobject("src/assets/imgs/sfondoSpazio.jpg")
         bg.set_resampling_algorithm(RESAMPLING_ALGORITHMS["nearest"])
         bg.scale_to_fit_height(config.frame_height)
         bg.move_to(ORIGIN)
@@ -356,7 +356,7 @@ class Parola24(Scene):
 
 class Parola25(Scene):
     def construct(self):
-        bg = ImageMobject("src/assets/sfondoSpazio.jpg")
+        bg = ImageMobject("src/assets/imgs/sfondoSpazio.jpg")
         bg.set_resampling_algorithm(RESAMPLING_ALGORITHMS["nearest"])
         bg.scale_to_fit_height(config.frame_height)
         bg.move_to(ORIGIN)
@@ -370,7 +370,7 @@ class Parola25(Scene):
 
 class Parola26(Scene):
     def construct(self):
-        bg = ImageMobject("src/assets/sfondoSpazio.jpg")
+        bg = ImageMobject("src/assets/imgs/sfondoSpazio.jpg")
         bg.set_resampling_algorithm(RESAMPLING_ALGORITHMS["nearest"])
         bg.scale_to_fit_height(config.frame_height)
         bg.move_to(ORIGIN)
@@ -384,7 +384,7 @@ class Parola26(Scene):
 
 class Parola27(Scene):
     def construct(self):
-        bg = ImageMobject("src/assets/sfondoSpazio.jpg")
+        bg = ImageMobject("src/assets/imgs/sfondoSpazio.jpg")
         bg.set_resampling_algorithm(RESAMPLING_ALGORITHMS["nearest"])
         bg.scale_to_fit_height(config.frame_height)
         bg.move_to(ORIGIN)
@@ -398,7 +398,7 @@ class Parola27(Scene):
 
 class Parola28(Scene):
     def construct(self):
-        bg = ImageMobject("src/assets/sfondoSpazio.jpg")
+        bg = ImageMobject("src/assets/imgs/sfondoSpazio.jpg")
         bg.set_resampling_algorithm(RESAMPLING_ALGORITHMS["nearest"])
         bg.scale_to_fit_height(config.frame_height)
         bg.move_to(ORIGIN)
@@ -412,7 +412,7 @@ class Parola28(Scene):
 
 class Parola29(Scene):
     def construct(self):
-        bg = ImageMobject("src/assets/sfondoSpazio.jpg")
+        bg = ImageMobject("src/assets/imgs/sfondoSpazio.jpg")
         bg.set_resampling_algorithm(RESAMPLING_ALGORITHMS["nearest"])
         bg.scale_to_fit_height(config.frame_height)
         bg.move_to(ORIGIN)
@@ -426,7 +426,7 @@ class Parola29(Scene):
 
 class Parola30(Scene):
     def construct(self):
-        bg = ImageMobject("src/assets/sfondoSpazio.jpg")
+        bg = ImageMobject("src/assets/imgs/sfondoSpazio.jpg")
         bg.set_resampling_algorithm(RESAMPLING_ALGORITHMS["nearest"])
         bg.scale_to_fit_height(config.frame_height)
         bg.move_to(ORIGIN)

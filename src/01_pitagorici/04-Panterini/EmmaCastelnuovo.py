@@ -2,7 +2,7 @@ from manim import *
 
 class Emma(Scene):
     def construct(self):
-        emma = ImageMobject("../assets/emma.jpg")\
+        emma = ImageMobject("../assets/imgs/emma.jpg")\
             .scale(0.5).to_edge(LEFT)
         name = Tex(r"\textsc{Emma Castelnuovo}\\")\
             .scale(1.2)\

@@ -2,7 +2,7 @@ from manim import *
 
 class TempioPaestumDetails(MovingCameraScene):
     def construct(self):
-        paestum_img = ImageMobject("../assets/tempio-nettuno.jpg").scale(.75).shift(UP * .5)
+        paestum_img = ImageMobject("../assets/imgs/tempio-nettuno.jpg").scale(.75).shift(UP * .5)
         title = Tex(r"\textsc{Tempio di Nettuno — Paestum}")
         title.next_to(paestum_img, DOWN, buff=.5).scale(1.4)
         self.add(paestum_img, title)
