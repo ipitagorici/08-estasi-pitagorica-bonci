@@ -14,3 +14,11 @@ Alcune indicazioni generali:
   - tutto in small caps per file,
   - parole separate da `-`,
   - quando si rende necessario inserire un numero, possibilmente precederlo da uno `0` se si tratta di una singola cifra (ad esempio: `9 => 09`);
+
+---
+Eseguire i moduli
+
+```sh
+export PYTHONPATH="$PWD/src:$PYTHONPATH"
+manim -pql src/00_inizio/Intro.py Intro
+```
