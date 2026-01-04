@@ -64,8 +64,8 @@ class Intro(Scene):
         # self.mobjects -> [Polygon, Polygon, Polygon, ..., Tetraktys]
 
         to_play = []
-        while (len(self.mobjects) > 0):
-            n = len(self.mobjects)
+        while (len(self.mobjects) > 1):
+            n = len(self.mobjects) - 1
             for i in range(n - 1, -1, -1):
                 current = self.mobjects[i]
                 prev = self.mobjects[i - 1]
@@ -76,3 +76,34 @@ class Intro(Scene):
             self.mobjects.remove(self.mobjects[0])
 
         self.play(AnimationGroup(to_play, lag_ratio=.05))
+        self.wait()
+        self.play(Wiggle(tetraktys, scale_value=1.3))
+        self.play(FadeOut(tetraktys))
+        self.wait(3)
+        self.play(FadeIn(title), run_time=3)
+        self.wait()
+        self.play(Write(subtitle_fg), Write(subtitle_shadow), run_time=3)
+
+        pascal_logo = ImageMobject(r"src/assets/imgs/loghi/pascal-white-logo-no-bg.png")
+        times = MathTex(r"\times")
+        pitagorici_logo = ImageMobject(r"src/assets/imgs/loghi/pitagorici-logo.png")
+        logo_header = Tex("Un'iniziativa di:")
+        logo_row = Group(pascal_logo, times, pitagorici_logo)
+        logos = Group(logo_row, logo_header)
+        pitagorici_logo.scale_to_fit_width(pascal_logo.width)
+        times.next_to(pitagorici_logo, RIGHT)
+        pascal_logo.next_to(times, RIGHT)
+        logo_row.center()
+        logo_header\
+            .scale(.8)\
+            .next_to(logo_row, UP, buff=MED_LARGE_BUFF)
+        logos.center()
+
+        self.wait(5)
+        self.play(FadeOut(*self.mobjects))
+
+        self.play(Write(logo_header))
+        self.play(FadeIn(logo_row))
+
+        self.wait(5)
+        self.play(FadeOut(*self.mobjects))
