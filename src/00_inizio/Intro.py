@@ -86,7 +86,7 @@ class Intro(Scene):
 
         pascal_logo = ImageMobject(r"src/assets/imgs/loghi/pascal-white-logo-no-bg.png")
         times = MathTex(r"\times")
-        pitagorici_logo = ImageMobject(r"src/assets/imgs/loghi/pitagorici-logo.png")
+        pitagorici_logo = ImageMobject(r"src/assets/imgs/loghi/pitagorici-logo-upscaled-2x.png")
         logo_header = Tex("Un'iniziativa di:")
         logo_row = Group(pascal_logo, times, pitagorici_logo)
         logos = Group(logo_row, logo_header)
