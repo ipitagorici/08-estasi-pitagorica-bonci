@@ -1,10 +1,12 @@
 from manim import *
+from src.custom_mobjects import BoheldText
 
 class TempioPaestumDetails(MovingCameraScene):
     def construct(self):
-        paestum_img = ImageMobject("../assets/imgs/tempio-nettuno.jpg").scale(.75).shift(UP * .5)
-        title = Tex(r"\textsc{Tempio di Nettuno — Paestum}")
-        title.next_to(paestum_img, DOWN, buff=.5).scale(1.4)
+        paestum_img = ImageMobject("src/assets/imgs/tempio-nettuno.jpg").scale(.75).shift(UP * .5)
+        title = BoheldText(r"Tempio di Nettuno, Paestum")
+        title.next_to(paestum_img, DOWN, buff=MED_SMALL_BUFF)\
+            .scale_to_fit_width(self.camera.frame_width - 5)
         self.add(paestum_img, title)
         self.camera.frame.save_state()
         upper_band = Rectangle(width=paestum_img.width, color=BLACK, height=1.75).set_opacity(1).to_edge(UP)

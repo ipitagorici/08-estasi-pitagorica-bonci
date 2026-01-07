@@ -9,7 +9,7 @@ class BohemianRhapsody(Scene):
         pause = Tex("(...)", font_size=100)
         translation3 = Tex("Non voglio morire,\\\\ma a volte vorrei non essere mai nato",
                             font_size=75)
-        ippaso = Tex(r"$\textit{Ippaso}$", font_size=80).to_corner(DR)
+        ippaso = Tex(r"$\textit{Ippaso}$", font_size=80).to_corner(DR, buff=MED_LARGE_BUFF)
 
         self.play(FadeIn(translation1))
         self.wait(4)

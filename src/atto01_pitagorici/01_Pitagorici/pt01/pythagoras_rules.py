@@ -4,21 +4,19 @@ class RulesSet:
         self.source = source
 
 rules_pt1 = [
-    "1. Astieniti dalle fave",
-    "2. Non raccogliere ciò che è caduto",
-    "3. Non toccare un gallo bianco",
-    "4. Non spezzare il pane",
-    "5. Non scavalcare le travi",
-    "6. Non attizzare il fuoco con il ferro",
-    "7. Non addentare una pagnotta intera",
-    "11. Non camminare sulle strade maestre",
-    "14. Non guardare in uno specchio accanto ad un lume"
+    "1. Astieniti dalle fave.",
+    "2. Non raccogliere ciò che è caduto.",
+    "3. Non toccare un gallo bianco.",
+    "4. Non spezzare il pane.",
+    "6. Non attizzare il fuoco con il ferro.",
+    "10. Non mangiare il cuore.",
+    "14. Non guardare in uno specchio accanto ad un lume."
 ]
 
 rules_pt2 = [
     "8. Non attizzare il fuoco col coltello.",
-    r"10. Aiuta l'uomo che si carica un fardello,\\ non aiutare chi lo depone.",
-    r"11. Per calzarti avanza prima il piede destro,\\ per il pediluvio il sinistro.",
+    "10. Aiuta l'uomo che si carica un fardello,\nnon aiutare chi lo depone.",
+    "11. Per calzarti avanza prima il piede destro,\nper il pediluvio il sinistro.",
     "12. Non parlare di cose pitagoriche al buio.",
     "37. Astieniti dalle fave."
 ]

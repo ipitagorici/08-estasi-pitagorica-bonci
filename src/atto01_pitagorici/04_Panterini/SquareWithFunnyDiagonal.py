@@ -5,9 +5,9 @@ class Square(Scene):
         funnySquare = Rectangle(WHITE, 4, 4)
         funnyDiagonal = Line(funnySquare.get_corner(UR), funnySquare.get_corner(DL))
 
-        lenghts = [Text("1"), Tex(r"Teorema di Pitagora:\\$a^2 + b^2 = c^2$"), Tex(r"$1^2 + 1^2 = 2$\\Quindi l'ipotenusa è uguale a $\sqrt{2}$"), Tex("$\sqrt{2}$")]
+        lenghts = [Text("1"), Tex(r"Teorema di Pitagora\\$a^2 + b^2 = c^2$"), Tex(r"$1^2 + 1^2 = 2$\\Quindi l'ipotenusa è uguale a $\sqrt{2}$"), Tex("$\sqrt{2}$")]
         lenghts[0].next_to(funnySquare.get_edge_center(LEFT), LEFT)
-        lenghts[1].shift(RIGHT*2.7).scale(1.8)
+        lenghts[1].shift(RIGHT * 2.7).scale(1.8)
         lenghts[2].scale(1.1).to_edge(RIGHT).shift(DOWN*2)
         
         self.play(LaggedStart(Create(funnySquare), Write(lenghts[0]), lag_ratio=0.5))

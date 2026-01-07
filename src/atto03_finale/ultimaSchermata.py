@@ -2,21 +2,21 @@ from manim import *
 
 class UltimaSchermata(Scene):
     def construct(self):
-        frase = Text("Fly me to the moon\n" +
+        frase = Paragraph("Fly me to the moon\n" +
                     "Let me play among the stars\n" +
-                    "Let me see what spring is like on\n" +
-                    "A-Jupiter and Mars", font_size=30)\
-            .to_edge(UR)\
-            .shift(LEFT*1.3)
-            
+                    "And let me see what spring is like\n" +
+                    "On a-Jupiter and Mars", line_spacing=MED_LARGE_BUFF, alignment="right")\
+            .to_edge(UR, buff=MED_LARGE_BUFF)\
+            .scale(.75)
 
         # Load the image and stretch it to fill the entire frame
-        bg = ImageMobject("src/Finale/sfondoSpazio.jpg")\
+        bg = ImageMobject("src/assets/imgs/upscaled-sfondoSpazio(flymetothemoon).jpg")\
             .move_to(ORIGIN)
-        bg.set_width(config.frame_width)
-        bg.set_height(config.frame_height)
 
         self.add(bg)
-        self.play(Write(frase, run_time=4))
+        self.wait(2)
+        self.play(bg.animate.set_opacity(.3), run_time=4)
+        self.wait()
+        self.play(Write(frase, run_time=10))
         
         self.wait(5)

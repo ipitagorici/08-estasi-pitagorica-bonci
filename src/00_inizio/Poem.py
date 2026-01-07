@@ -2,8 +2,10 @@ from manim import *
 
 class Poem(Scene):
     def construct(self):
-        self.next_section("AnnaRicci")
+        # remember to render using the --save_sections option!
         
+        self.next_section("AnnaRicci")
+
         poem1 = Tex("L’uomo di scienza non studia la natura perché ciò è utile;\\\\" +
                         "la studia perché ci prova gusto,\\\\" + 
                         "e ci prova gusto perché la natura è bella.\\\\"

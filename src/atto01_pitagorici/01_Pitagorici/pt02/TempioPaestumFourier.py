@@ -46,7 +46,7 @@ class TempioPaestumFourier(Scene):
 
         fn = axes.plot(lambda x: fourier_series(x, 61))
         fn.set_stroke(color=RED, width=7).set_z_index(2)
-        paestum_img = ImageMobject("../assets/imgs/tempio-nettuno.jpg").scale(5).shift(DOWN * 6 + RIGHT * .4).set_opacity(.6).set_z_index(-1)
+        paestum_img = ImageMobject("src/assets/imgstempio-nettuno.jpg").scale(5).shift(DOWN * 6 + RIGHT * .4).set_opacity(.6).set_z_index(-1)
         self.play(Create(fn), run_time=5)
         self.play(FadeIn(paestum_img), FadeOut(toFadeOut), run_time=10)
         self.wait()

@@ -2,7 +2,7 @@ from manim import *
 
 class HisFace(Scene):
     def construct(self):
-        face = ImageMobject("../assets/imgs/archita-da-taranto.jpg")
+        face = ImageMobject("src/assets/imgsarchita-da-taranto.jpg")
         face.scale(1.2)
         self.play(FadeIn(face), run_time=1.5)
         self.play(face.animate.scale(.65).to_edge(UP, buff=.7))

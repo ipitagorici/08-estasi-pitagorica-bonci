@@ -26,7 +26,7 @@ class Parola1(Scene):
         bg.move_to(ORIGIN)
         self.add(bg)
 
-        parola = Tex("Universi Possibili", color=YELLOW, font_size=90)
+        parola = Tex("Universi possibili", color=YELLOW, font_size=90)
         parola.move_to(generate_random_point_inside_screen())
         self.add(parola)
         self.play(FadeIn(parola, run_time=2))
@@ -40,7 +40,7 @@ class Parola2(Scene):
         bg.move_to(ORIGIN)
         self.add(bg)
 
-        parola = Tex("Si Espandono", color=YELLOW, font_size=90)
+        parola = Tex("Si espandono", color=YELLOW, font_size=90)
         parola.move_to(generate_random_point_inside_screen())
         self.add(parola)
         self.play(FadeIn(parola, run_time=2))

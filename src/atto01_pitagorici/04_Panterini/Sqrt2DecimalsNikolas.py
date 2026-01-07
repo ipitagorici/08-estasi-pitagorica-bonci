@@ -1,4 +1,5 @@
 from manim import *
+from src.custom_mobjects import BoheldText
 
 class Sqrt2DecimalsNikolas(Scene):
     def construct(self):
@@ -34,7 +35,7 @@ class Sqrt2DecimalsNikolas(Scene):
         ]).scale_to_fit_width(self.camera.frame_width).scale(.97).to_edge(UP)
         # hLines = alphabetTable.get_horizontal_lines().set_opacity(0)
         vLines = alphabetTable.get_vertical_lines().set_opacity(0)
-        name = Tex(r"\textsc{Nikolas}").scale(2).next_to(alphabetTable, DOWN)
+        name = BoheldText("Nikolas").scale(2).next_to(alphabetTable, DOWN)
         sqrt2Complete.next_to(name, DOWN, buff=.5)
         self.play(Write(sqrt2Complete))
         self.wait(.75)
