@@ -1,16 +1,25 @@
 from manim import *
 
-class StoriePitagoriche:
+class StoriePitagoriche(Scene):
     def construct(self):
         immagini_pitagoriche = Group(
-            ImageMobject("assets/imgs/storie_pitagoriche/2024_07_29 DSCF1004.jpg"),
-            ImageMobject("assets/imgs/storie_pitagoriche/2024_07_30 DSCF1036.jpg"),
-            ImageMobject("assets/imgs/storie_pitagoriche/2025_10_30 225841 DSCF5687.jpg"),
-            ImageMobject("assets/imgs/storie_pitagoriche/2025_10_30 230840 DSCF5709.jpg"),
-            ImageMobject("assets/imgs/storie_pitagoriche/2025_11_14 DSCF5855.jpg4"),
-            ImageMobject("assets/imgs/storie_pitagoriche/_DSC1729.JPG"),
-            ImageMobject("assets/imgs/storie_pitagoriche/_DSC9430.JPG"),
-            ImageMobject("assets/imgs/storie_pitagoriche/DSC_0067.JPG"),
-            ImageMobject("assets/imgs/storie_pitagoriche/IMG-20240730-WA0017.jpg"),
-            ImageMobject("assets/imgs/storie_pitagoriche/IMG-20250125-WA0000.jpg"),
+            ImageMobject("assets/imgs/storie_pitagoriche/1.jpg"),
+            ImageMobject("assets/imgs/storie_pitagoriche/2.jpg"),
+            ImageMobject("assets/imgs/storie_pitagoriche/3.jpg"),
+            ImageMobject("assets/imgs/storie_pitagoriche/4.jpg"),
+            ImageMobject("assets/imgs/storie_pitagoriche/5.jpg"),
+            ImageMobject("assets/imgs/storie_pitagoriche/6.jpg"),
+            ImageMobject("assets/imgs/storie_pitagoriche/7.jpg"),
+            ImageMobject("assets/imgs/storie_pitagoriche/8.jpg"),
+            ImageMobject("assets/imgs/storie_pitagoriche/9.jpg"),
+            ImageMobject("assets/imgs/storie_pitagoriche/10.jpg"),
         )
+        
+        for i in range(0,len(immagini_pitagoriche)):
+            if i==0:
+                self.play(FadeIn(immagini_pitagoriche[i], run_time=8))
+            else:
+                self.play(FadeOut(immagini_pitagoriche[i-1]), FadeIn(immagini_pitagoriche[i-1]), run_time=8)
+                
+        
+        self.wait(2)

@@ -12,19 +12,27 @@ class BohemianRhapsody(Scene):
         ippaso = Tex(r"$\textit{Ippaso}$", font_size=80).to_corner(DR, buff=MED_LARGE_BUFF)
 
         self.play(FadeIn(translation1))
-        self.wait(4)
+        
+        self.next_section()
+        
         self.play(FadeOut(translation1))
 
         self.play(FadeIn(translation2))
-        self.wait(6)
+        
+        self.next_section()
+        
         self.play(FadeOut(translation2))
 
         self.play(FadeIn(pause))
-        self.wait(4)
+        
+        self.next_section()
+        
         self.play(FadeOut(pause))
 
         self.play(FadeIn(translation3))
-        self.wait(8)
+        
+        self.next_section()
+        
         self.play(FadeIn(ippaso))
 
         self.wait(2)   
