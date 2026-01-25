@@ -31,7 +31,7 @@ class PoppingWords(Scene):
             "Grumosi", 
             "Agitati", 
             "Maree Cosmiche", 
-            "Eternità", 
+            "EternitÀ", 
             "Senza vita", 
             "Tumultuoso futuro", 
             "Infinite cose", 
@@ -49,7 +49,7 @@ class PoppingWords(Scene):
             "Universo Possibile", 
             "Molti Universi Possibili", 
             "Leggi Di Natura", 
-            "Mere Possibilità", 
+            "Mere PossibilitÀ", 
             "Voi e Me", 
             "Qui e Ora"
         ]
@@ -57,7 +57,10 @@ class PoppingWords(Scene):
             .scale_to_fit_width(self.camera.frame_width)\
             .set_z_index(-2)
         self.add(bg)
-
+        def update_bg(bg, dt):
+            bg.scale(1 + 0.005 * dt)
+        
+        bg.add_updater(update_bg)
         self.play(bg.animate.set_opacity(.5))
         self.wait()
         for word in words:
