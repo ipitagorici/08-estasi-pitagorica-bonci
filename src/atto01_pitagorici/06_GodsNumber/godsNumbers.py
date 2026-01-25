@@ -1,20 +1,34 @@
 from manim import *
+from src.custom_mobjects import BoheldText
 
 class GodsNumbers(Scene):
     def construct(self):
-        cube2 = ImageMobject("../src/assets/imgsrubiks-cube2x2.png").scale(0.5).to_edge(LEFT)
-        mosse2 = Tex(r"2x2 \\ 11 mosse").next_to(cube2, DOWN)
+        def cell_content(img_path, title_text, caption_text):
+            img = ImageMobject(img_path).scale(.7)
+            title = BoheldText(title_text)
+            caption = Tex(caption_text)
+            return Group(img, title, caption).arrange_in_grid(cols=1)
+        
+        cube2 = "src/assets/imgs/rubiks-cube2x2.png"
+        title2 = "2 x 2"
+        caption2 = r"\textsc{11 mosse}"
+        cell2 = cell_content(cube2, title2, caption2)
 
-        cube3 = ImageMobject("../src/assets/imgsrubiks-cube3x3.jpg").move_to(ORIGIN)
-        mosse3 = Tex(r"3x3 \\ 20 mosse").next_to(cube3, DOWN)
+        cube3 = "src/assets/imgs/rubiks-cube3x3.png"
+        title3 = "3 x 3"
+        caption3 = r"\textsc{20 mosse}"
+        cell3 = cell_content(cube3, title3, caption3)
+        
+        cube4 = "src/assets/imgs/rubiks-cube4x4.png"
+        title4 = "4 x 4"
+        caption4 = r"\textsc{??? mosse}"
+        cell4 = cell_content(cube4, title4, caption4)
 
-        cube4 = ImageMobject("../src/assets/imgsrubiks-cube4x4.jpg").scale(0.5).to_edge(RIGHT)
-        mosse4 = Tex(r"4x4 \\ ??? mosse").next_to(cube4, DOWN)
+        target_height = min([cell2[0].height, cell3[0].height, cell4[0].height])
+        for cube in [ cell2, cell3, cell4 ]:
+            cube.scale_to_fit_height(target_height)
 
-
-        self.play(FadeIn(cube2), Write(mosse2))
-
-        self.play(FadeIn(cube3), Write(mosse3))
-
-        self.play(FadeIn(cube4), Write(mosse4))
-    
+        row = Group(cell2, cell4.scale(2), cell3).arrange_in_grid(rows=1, buff=LARGE_BUFF).center()
+        self.play(FadeIn(row[0]))
+        self.play(FadeIn(row[2]))
+        self.play(GrowFromCenter(row[1]))

@@ -1,53 +1,78 @@
 from manim import *
+from src.custom_mobjects import BoheldText
 
-class BigNumber(Scene):
+SCREEN_WIDTH_OFFSET = 3
+
+class BigNumbers(Scene):
     def construct(self):
-        bigNumber = Tex("43.252.003.274.489.856.000", font_size=100)\
-            .shift(UP)
-
-        self.play(Write(bigNumber))
-
-class UniverseAge(Scene):
-    def construct(self):
-        universeAge = Tex("13.7 miliardi di anni", font_size=100)\
-            .shift(DOWN)
-
-        self.play(Write(universeAge))
-
-class Compare(Scene):
-    def construct(self):
-        bigNumber = Tex(r"43.252.003.274.489.856.000", font_size=100).to_edge(UP)
-        universeAge = Tex(r"13.7 miliardi di anni", font_size=100).to_edge(DOWN)
-
-        ageTransformationExplanation = Tex(r"13.Mi = 365 x 24 x60 x 60 x 13.700.000.000 =", font_size=60).to_edge(DOWN)
-        ageTransformationExplanation.move_to([ORIGIN[0], ORIGIN[1]-ageTransformationExplanation.get_height()*2, 0])
-
-        numberScientific = Tex(r"4,32 x 10$^{19}$", font_size=100)
-        numberScientific.move_to([ORIGIN[0], ORIGIN[1]+numberScientific.get_height(), 0])
-        ageScientific = Tex(r"4.32 x 10$^{17}$", font_size=100)
-        ageScientific.move_to([ORIGIN[0], ORIGIN[1], 0])
-
-        fraction = Tex(r"$\frac{4.32 x 10^{19}}{4.32 x 10^{17}}$", font_size=200)
-        fractionResult = Tex(r"= 100", font_size=200).next_to(fraction, RIGHT)
-
-
-        self.play(FadeIn(bigNumber))
-        self.play(FadeIn(universeAge))
-        self.wait()
-
-        self.play(Transform(bigNumber, numberScientific, replace_mobject_with_target_in_scene=True))
+        self.next_section("BigNumber")
+        bigNumber = BoheldText("43.252.003.274.489.856.000")\
+            .scale_to_fit_width(self.camera.frame_width - SCREEN_WIDTH_OFFSET)
+        subtitle = Tex(r"\textsc{Possibili configurazioni}").next_to(bigNumber, DOWN)
         
-        self.play(FadeOut(universeAge), FadeIn(ageTransformationExplanation))
-        self.wait(2)
-        self.play(Transform(ageTransformationExplanation, ageScientific, replace_mobject_with_target_in_scene=True))
-        self.wait()
+        VGroup(bigNumber, subtitle).center()
+        self.play(Write(bigNumber))
+        self.play(Write(subtitle))
+        
+        self.next_section("UniverseAge")
+        
+        self.play(FadeOut(*self.mobjects))
+        
+        universeAge = BoheldText("13.7 miliardi di anni")\
+            .scale_to_fit_width(self.camera.frame_width - SCREEN_WIDTH_OFFSET)
+        subtitle = Tex(r"\textsc{Età dell'universo}").next_to(universeAge, DOWN)
 
-        self.play(FadeOut(numberScientific), FadeOut(ageScientific), GrowFromCenter(fraction))
-        self.wait()
+        VGroup(universeAge, subtitle).center()
+        self.play(Write(universeAge))
+        self.play(Write(subtitle))
 
-        self.play(fraction.animate.to_edge(LEFT))
-        fractionResult.next_to(fraction, RIGHT)
-        self.play(Write(fractionResult))
+        self.next_section("Comparison")
+        self.play(FadeOut(subtitle))
+        
+        scientificBigNumber = MathTex(r"4.32 \times 10^{19}").set_color(YELLOW)
+        scientificUniverseAge = MathTex(r"4.32 \times 10^{17}").set_color(GREEN)
+        
+        self.play(universeAge.animate\
+                .scale(.9)\
+                .shift(UP * .5))
+        ageTransformationExplanation = MathTex(r"= 365 \times 24 \times 60 \times 60 \times 13.700.000.000 =")\
+            .scale_to_fit_width(universeAge.width - 1)\
+            .next_to(universeAge, DOWN, MED_LARGE_BUFF)
+        self.play(Write(ageTransformationExplanation))
+        self.play(Write(scientificUniverseAge.copy()\
+                    .scale(2)\
+                    .next_to(ageTransformationExplanation, DOWN, MED_LARGE_BUFF)))
+        self.play(Circumscribe(self.mobjects[-1], color=ORANGE))
 
+        self.play(FadeOut(*self.mobjects))
+        self.play(Write(bigNumber))
+        self.play(bigNumber.animate\
+                .scale(.9)\
+                .shift(UP * .5))
+        scientificBigNumberExplanation = MathTex(r"= 4.32 \times 10^{19} = ")\
+            .scale_to_fit_width(ageTransformationExplanation.width - 6)\
+            .next_to(bigNumber, DOWN, MED_LARGE_BUFF)
+        self.play(Write(scientificBigNumberExplanation))
+        scientificBigNumberNormalized = MathTex(r"4.32 \times 10^{17} \times 10^2", substrings_to_isolate=[r"10^2"])\
+            .scale_to_fit_width(bigNumber.width - 1)\
+            .next_to(scientificBigNumberExplanation, DOWN, MED_LARGE_BUFF)\
+            .set_color(GREEN)\
+            .set_color_by_tex(r"10^2", RED)
+        self.play(Write(scientificBigNumberNormalized))
+        self.play(Circumscribe(scientificBigNumberNormalized, color=ORANGE))
+        
+        self.play(FadeOut(*self.mobjects))
 
-        self.wait(2)
+        initialFraction = MathTex(r"\frac{4.32 \times 10^{17} \times 10^2}{4.32 \times 10^{17}}")
+        initialFraction[0][0:9].set_color(GREEN)
+        initialFraction[0][10:13].set_color(RED)
+        initialFraction[0][14:].set_color(GREEN)
+        equalsToResult = MathTex(r"= 10^2 = 100", substrings_to_isolate=[r"10^2", "100"])\
+                .set_color_by_tex("10^2", RED)\
+                .set_color_by_tex("100", RED)
+        
+        self.play(Write(initialFraction))
+        self.play(initialFraction.animate.shift(LEFT))
+        equalsToResult.next_to(initialFraction, RIGHT)
+        self.play(Write(equalsToResult))
+

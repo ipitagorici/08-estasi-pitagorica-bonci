@@ -1,12 +1,13 @@
 from manim import *
+from src.custom_mobjects import BoheldText
 
 class HisFace(Scene):
     def construct(self):
-        face = ImageMobject("src/assets/imgsarchita-da-taranto.jpg")
+        face = ImageMobject("src/assets/imgs/archita-da-taranto.jpg")
         face.scale(1.2)
         self.play(FadeIn(face), run_time=1.5)
         self.play(face.animate.scale(.65).to_edge(UP, buff=.7))
-        name = Tex(r"$\mathbb{A}$\textsc{rchita}").scale(2.5)
+        name = BoheldText(r"Archita").scale(1.5)
         name.next_to(face, DOWN)
         birth_place = Tex(r"\textbf{Taranto}")
         death_place = Tex(r"\textbf{Mattinata}")

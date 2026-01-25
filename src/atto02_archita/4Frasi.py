@@ -1,22 +1,23 @@
 from manim import *
+from src.custom_mobjects import BoheldText
 
 class QuattroFrasi(Scene):
     def construct(self):
         phrase = [
             VGroup(
-                Tex(r"\textsc{Aritmetica}", font_size=80), 
+                BoheldText(r"Aritmetica", font_size=60), 
                 Tex(r"numeri a riposo"), 
             ),
             VGroup(
-                Tex(r"\textsc{Geometria}", font_size=80), 
+                BoheldText(r"Geometria", font_size=60), 
                 Tex("grandezze a riposo"),
             ),
             VGroup(
-                Tex(r"\textsc{Musica}", font_size=80), 
+                BoheldText(r"Musica", font_size=60), 
                 Tex("numeri in movimento"), 
             ),
             VGroup(
-                Tex(r"\textsc{Astronomia}", font_size=80), 
+                BoheldText(r"Astronomia", font_size=60), 
                 Tex("grandezze in movimento")
             )
         ]
@@ -30,7 +31,6 @@ class QuattroFrasi(Scene):
         
         change = False
         for idx, direction in enumerate([UP, LEFT, RIGHT, DOWN]):
-            phrase[idx][0].set_color(LIGHT_BROWN if not change else BLUE)
             self.play(GrowFromEdge(phrase[idx], direction))
             self.play(Circumscribe(phrase[idx]))
             change = not change

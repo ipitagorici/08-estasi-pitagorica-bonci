@@ -2,6 +2,6 @@ from manim import *
 
 class Cube(Scene):
     def construct(self):
-        cube = ImageMobject("../src/assets/imgsrubiks-cube.png").scale(2)
+        cube = ImageMobject("src/assets/imgs/rubiks-cube.png").scale(.8)
 
         self.play(FadeIn(cube))

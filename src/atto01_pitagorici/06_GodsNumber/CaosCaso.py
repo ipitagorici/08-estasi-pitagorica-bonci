@@ -1,17 +1,12 @@
 from manim import *
+from src.custom_mobjects import BoheldText
 
-class Caos(Scene):
-    def construct(self):
-        caos = Tex("Caos", font_size=200)
-
-        self.play(Write(caos))
-        self.wait(2)
-        
 class CaosCaso(Scene):
     def construct(self):
-        caos = Tex("Caos", font_size=200)
-        caso = Tex("Caso", font_size=200)
+        caos = BoheldText("Caos", font_size=200)
+        self.play(Write(caos))
 
-        self.add(caos)
+        self.next_section("CaosToCaso")
+        
+        caso = BoheldText("Caso", font_size=200)
         self.play(Transform(caos, caso))
-        self.wait(2)

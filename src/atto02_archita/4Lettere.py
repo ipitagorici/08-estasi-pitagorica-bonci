@@ -1,23 +1,24 @@
 from manim import *
+from src.custom_mobjects import BoheldText
 
 class QuattroLettere(Scene):
     def construct(self):
         phrase = [
             VGroup(
                 Tex(r"$\Omega$", font_size=200), 
-                Tex(r"Parametro di densità"), 
+                BoheldText(r"Parametro di densità").scale(.5), 
             ),
             VGroup(
                 Tex(r"\textsc{k}", font_size=200), 
-                Tex("Curvatura"),
+                BoheldText("Curvatura").scale(.5),
             ),
             VGroup(
                 Tex(r"\textsc{H}", font_size=200), 
-                Tex("Costante di Hubble"), 
+                BoheldText("Costante di Hubble").scale(.5), 
             ),
             VGroup(
                 Tex(r"$\Lambda$", font_size=200), 
-                Tex("Costante cosmologica")
+                BoheldText("Costante cosmologica").scale(.5)
             )
         ]
         
