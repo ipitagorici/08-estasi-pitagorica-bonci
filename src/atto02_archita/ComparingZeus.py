@@ -7,15 +7,12 @@ class ZeusAConfronto(Scene):
             y_coord = (mobject_left.get_center()[1] + mobject_right.get_center()[1]) / 2
             return (x_coord, y_coord, 0)
 
-
-        from_edge_distance = 1
-        teatro = ImageMobject("src/assets/imgsTeatro_Comunale_Alessandro_Bonci.jpg")\
+        teatro = ImageMobject("src/assets/imgs/Teatro_Comunale_Alessandro_Bonci.jpg")\
             .scale(1.5)\
-            .to_edge(LEFT)\
-            .shift(RIGHT*from_edge_distance)
-        zeus = ImageMobject("src/assets/imgszeus_bianco-nobg.png")\
+            .to_edge(LEFT)
+        zeus = ImageMobject("src/assets/imgs/zeus_bianco-nobg.png")\
             .to_edge(RIGHT)\
-            .shift(LEFT*from_edge_distance)
+            .shift(LEFT*2)
         zeus.shift(DOWN*(zeus.get_bottom()[1]-teatro.get_bottom()[1]))
 
         zeus_height_indicator = Line(
@@ -29,7 +26,7 @@ class ZeusAConfronto(Scene):
         elements = Group(teatro, zeus, zeus_height_indicator, zeus_height)
         
         zeus_height_operation = MathTex(r"4\ \text{cubiti}\ \times ")
-        tetraktys = ImageMobject("src/assets/imgstetraktys_nowriting.png")\
+        tetraktys = ImageMobject("src/assets/imgs/tetraktys_nowriting.png")\
             .scale(.15)\
             .next_to(zeus_height_operation, RIGHT)
         equal_to = MathTex(r"= 40\ \text{cubiti}")\
