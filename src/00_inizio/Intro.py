@@ -2,24 +2,38 @@ from manim import *
 from src.custom_mobjects import BoheldText, Tetraktys
 
 class Intro(Scene):
-    
+    def create_glow(self, vmobject: VMobject, rad=1, col=YELLOW):
+        glow_group = VGroup()
+        for idx in range(100):
+            new_obj = vmobject.copy()
+            new_obj\
+                .scale(1 + (1.002 ** (idx**2))/400)\
+                .set_stroke(opacity = 0)\
+                .move_to(vmobject)
+            if vmobject.get_color() is not None:
+                new_obj\
+                    .set_color(col)\
+                    .set_opacity(0.2 - idx/300)
+            if vmobject.get_stroke_color() is not None:
+                new_obj\
+                    .set_stroke(color = col, opacity = 0.2 - idx/300)
+            glow_group.add(new_obj)
+        return glow_group
+
     def construct(self):
         fg_color = ManimColor("#e4c8c8")
         shadow_color = ManimColor("#82001e")
 
         title_fg = BoheldText("Estasi Pitagorica", color=fg_color)\
             .scale(1.5)
-        title_shadow = title_fg.get_shadow(shadow_color)
         
-        title = VGroup(title_fg, title_shadow)
+        title = VGroup(title_fg)
 
         subtitle_fg = BoheldText("L'eterno spettacolo della matematica", color=fg_color)\
             .next_to(title, DOWN)\
             .scale_to_fit_width(self.camera.frame_width - 2.0)
-
-        subtitle_shadow = subtitle_fg.get_shadow(shadow_color)
         
-        subtitle = VGroup(subtitle_fg, subtitle_shadow)
+        subtitle = VGroup(subtitle_fg)
 
         tetraktys = Tetraktys()
 
@@ -77,12 +91,22 @@ class Intro(Scene):
 
         self.play(AnimationGroup(to_play, lag_ratio=.05))
         self.wait()
-        self.play(Wiggle(tetraktys, scale_value=1.3))
-        self.play(FadeOut(tetraktys))
+        dots = tetraktys.get_dots()
+        glows = VGroup()
+        for row in dots:
+            for circle in row:
+                glows.add(self.create_glow(vmobject=circle, col=circle.get_color()))
+        # self.play(Wiggle(tetraktys, scale_value=1.3))
+        self.play(
+            FadeIn(*[glow for glow in glows]), 
+            run_time=8
+        )
+        self.wait()
+        self.play(FadeOut(tetraktys, *glows))
         self.wait(3)
         self.play(FadeIn(title), run_time=3)
         self.wait()
-        self.play(Write(subtitle_fg), Write(subtitle_shadow), run_time=3)
+        self.play(Write(subtitle), run_time=3)
 
         pascal_logo = ImageMobject(r"src/assets/imgs/loghi/pascal-white-logo-no-bg.png")
         times = MathTex(r"\times")

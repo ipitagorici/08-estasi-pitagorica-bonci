@@ -26,7 +26,7 @@ class Tetraktys(Mobject):
             circles.get_left() + DOWN * 2)\
                 .scale(1.5)\
                 .shift(UP * .35)\
-                .set_color(MAROON)
+                .set_stroke(color=MAROON)
         
         self.triangle = triangle
         self.dots = circles
